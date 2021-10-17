@@ -1,0 +1,36 @@
+@media only screen and (max-width: 767px) {
+    .slider__wrapper {
+        width: 90vw;
+        height: 50vh;
+    }
+    .slider__footer {
+        flex-direction: column-reverse;
+    }
+    .text__wrapper { 
+        display: flex;
+        align-self: flex-start;
+        margin-top: 20px;
+    }
+    .slider__footer .slider__text {
+        margin-left: 0;
+    }
+    .slider__btn {
+        display: flex;
+        align-self: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .slider__wrapper {
+        height: 40vh;
+    }
+    .slider__footer .slider__text {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .slider__wrapper {
+        height: 30vh;
+    }
+}
