@@ -1,0 +1,194 @@
+:root {
+    font-size: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(37, 39, 53);
+}
+
+.slider__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    width: 80vw;
+    height: 70vh;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    overflow: hidden;
+    padding-bottom: 2rem;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 80%;
+
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
+    
+    overflow-x: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 0;
+    z-index: 0;
+    
+    transform: translateX(100%);
+    transition: transform ease .2s;
+}
+
+.slide1 {
+    background-image: url('https://c.tenor.com/2oOtrVVw-kIAAAAC/the-nanny-cc-babcock.gif');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide2 {
+    background-image: url('https://c.tenor.com/CPiJMz0aw_0AAAAd/looking-dean-schneide.gif');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide3 {
+    background-image: url('https://c.tenor.com/L8GS9uVbb1wAAAAC/on-the.gif');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide4 {
+    background-image: url('https://c.tenor.com/mhCw9HpvfIAAAAAC/fresh-prince-of-bel-air-carlton.gif');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slider__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    padding: 0;
+    margin: 0;
+}
+
+.text__wrapper {
+    position: relative;
+
+    overflow-x: hidden;
+
+    margin-top: 1rem;
+    margin-left: .5rem;
+    width: 30rem;
+    height: 3rem;
+}
+
+.slider__footer .slider__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translateX(100%);
+    transition: transform ease .2s;
+
+    font-size: 1.8rem;
+    color: #adadad;
+
+    opacity: 0;
+    z-index: 0;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide1:checked ~ .slider__footer > .text__wrapper > .slider__text.text1,
+#slide2:checked ~ .slider__footer > .text__wrapper > .slider__text.text2,
+#slide3:checked ~ .slider__footer > .text__wrapper > .slider__text.text3,
+#slide4:checked ~ .slider__footer > .text__wrapper > .slider__text.text4 {
+    transform: translateX(0);
+    opacity: 1;
+	z-index: 1;
+}
+
+.slider__wrapper input {
+    display: none;
+}
+
+.slider__footer .slider__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    margin-right: 1rem;
+}
+
+.slider__footer label {
+    display: block;
+    position: relative;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+	
+    width: 1rem;
+    height: 1rem;
+
+    border-radius: 50%;
+    border: .2rem solid #adadad;
+    background: #adadad;
+    
+    cursor: pointer;
+}
+
+.slider__footer label::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    bottom: -1rem;
+    right: -1rem;
+
+    border-radius: 50%;
+}
+
+.slider__footer label:hover {
+    border: .2rem solid white;
+    background: white;
+}
+
+.slider__footer label:active {
+    border: .2rem solid #5e5e5e;
+    background: #5e5e5e;
+}
+
+#slide1:checked ~ .slider__footer label:nth-of-type(1),
+#slide2:checked ~ .slider__footer label:nth-of-type(2),
+#slide3:checked ~ .slider__footer label:nth-of-type(3),
+#slide4:checked ~ .slider__footer label:nth-of-type(4) {
+    background: rgb(37, 39, 53);
+    border: .2rem solid #adadad;
+}
+
+
+#slide1:checked ~ .slider__footer label:hover,
+#slide2:checked ~ .slider__footer label:hover,
+#slide3:checked ~ .slider__footer label:hover,
+#slide4:checked ~ .slider__footer label:hover {
+    border: .2rem solid white;
+}
